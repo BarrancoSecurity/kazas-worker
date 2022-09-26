@@ -1,8 +1,8 @@
 from encuentra24_do import Encuentra24DoInterface
 from encuentra24_gt import Encuentra24GtInterface
-from concurrent.futures import ThreadPoolExecutor
 
-from perftest import TestInterface
+
+
 
 enabled_params = [
     {"identifier": "localizacion", "name": "localizacion", "enabled": "true"},
@@ -21,24 +21,21 @@ enabled_params = [
 ]
 
 
-# def scanner(module):  
-#     print("started") 
-#     workers = {
-#         # "encuentra24-gt": Encuentra24GtInterface(
-#         #     "https://www.encuentra24.com/", 1543, 15, enabled_params, 55
-#         # ).read_items_by_page(),
-#          "encuentra24-do": Encuentra24DoInterface(
-#             "https://www.encuentra24.com/", 563, 15, enabled_params, 55
-#         ).read_items_by_page()
-#     }
-
-#     workers[module]
-
-
-TestInterface(
-            "https://www.encuentra24.com/", 931, 15, enabled_params, 55
+def scanner(module):  
+    print("started") 
+    workers = {
+        # "encuentra24-gt": Encuentra24GtInterface(
+        #     "https://www.encuentra24.com/", 1543, 15, enabled_params, 55
+        # ).read_items_by_page(),
+         "encuentra24-do": Encuentra24DoInterface(
+            "https://www.encuentra24.com/", 3000, 15, enabled_params, 55
         ).read_items_by_page()
-# scanner("encuentra24-do")
+    }
+
+    workers[module]
+
+
+scanner("encuentra24-do")
 
 
 

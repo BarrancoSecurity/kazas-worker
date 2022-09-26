@@ -8,7 +8,7 @@ from halo import Halo
 import time
 import requests
 
-url = "https://lara.barrancosecurity.me/v2/kazas"
+url = "http://localhost:1337/v2/kazas"
 
 
 def laraIndex(item):
@@ -25,6 +25,8 @@ class Encuentra24GtInterface:
         self.usd_conversion_rate = usd_conversion_rate
 
     # Find all items on each page, based on max_items provided
+    # RENT: # RENT: https://www.encuentra24.com/guatemala-en/real-estate-for-rent-apartments
+    # BUY:  # BUY: https://www.encuentra24.com/guatemala-en/real-estate-for-sale-houses-homes 
     def read_items_by_page(self):
         print("Called")
         max_pages = math.floor(self.max_items / self.items_per_page)
@@ -33,7 +35,7 @@ class Encuentra24GtInterface:
 
         while current_page <= max_pages:
             source = requests.get(
-                url="https://www.encuentra24.com/guatemala-en/real-estate-for-sale-houses-homes.{}".format(
+                url="https://www.encuentra24.com/guatemala-en/real-estate-for-rent-apartments.{}".format(
                     current_page
                 )
             )
@@ -138,7 +140,7 @@ class Encuentra24GtInterface:
             "parqueos": parqueos,
             "nombre_agente": nombre_agente,
             "numero_agente": numero_agente,
-            "type": "buy",
+            "type": "rent",
             "extras": [{"parent": "Comodidades", "fields": [{"name": "Piscina"}]}],
         }
 

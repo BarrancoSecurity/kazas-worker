@@ -40,9 +40,10 @@ class Encuentra24DoInterface:
 
         # Rent
         url3 = "https://www.encuentra24.com/dominican-en/real-estate-for-rent-apartments/santo-domingo.2"
+
         while current_page <= max_pages:
             source = requests.get(
-                url="https://www.encuentra24.com/dominican-en/real-estate-for-rent-apartments/santo-domingo.{}".format(
+                url="https://www.encuentra24.com/dominican-en/real-estate-for-sale-apartments-condos/santo-domingo.{}".format(
                     current_page
                 )
             )
@@ -147,8 +148,8 @@ class Encuentra24DoInterface:
             "parqueos": parqueos,
             "nombre_agente": nombre_agente,
             "numero_agente": numero_agente,
-            "type": "rent",
+            "type": "buy",
             "extras": [{"parent": "Comodidades", "fields": [{"name": "Piscina"}]}],
         }
 
-        # laraIndex(item)
+        laraIndex(item)
