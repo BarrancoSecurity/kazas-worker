@@ -1,5 +1,10 @@
-urls = list()
+urls = [
+    "https://adondevivir.com/propiedades/se-alquila-excelente-departamento-amoblado-en-san-63567213.html", 
 
-for i in range(1,321):
-    urls.append("https://www.properati.com.pe/s/venta?page={}".format(i))
-print(urls)
+]
+
+
+if "https://adondevivir.com/propiedades/se-alquila-excelente-departamento-amoblado-en-san-63567213.html" in urls:
+    print("is")
+else:
+    print("is not")
